@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-13T05:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="booking-page" name="1 - Book Court">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="560" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="1 - Book Court — Court Booking Platform" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="30" y="18" width="1140" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Communication diagram • messages are numbered in interaction order; bracketed text indicates a condition." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="30" y="55" width="1140" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="student" value="student:Student" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#f1f5f9;strokeColor=#64748b;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="70" y="220" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="court" value="court:Court" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="340" y="150" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="booking" value="booking:Booking" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="620" y="220" width="170" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="notification" value="notification:Notification" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#ecfdf5;strokeColor=#36966b;fontColor=#064e3b;" vertex="1" parent="1">
+          <mxGeometry x="930" y="220" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="&lt;b&gt;Alternative outcome&lt;/b&gt;&lt;br&gt;[slot unavailable] → show unavailable message and suggest another slot" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fontSize=12;fillColor=#fff7ed;strokeColor=#ea580c;fontColor=#7c2d12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="390" width="410" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="1: checkAvailability()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="student" target="court">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="2: createBooking() [slot available]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="court" target="booking">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="3: send()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="booking" target="notification">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="4: confirmBooking()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="booking" target="student">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="315"/>
+              <mxPoint x="150" y="315"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="2a: return unavailable result()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;dashed=1;strokeWidth=1.2;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#334155;" edge="1" parent="1" source="court" target="student">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="300"/>
+              <mxPoint x="150" y="300"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="games-page" name="2 - Games and Join Requests">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="540" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="2 - Games and Join Requests — Court Booking Platform" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="30" y="18" width="1140" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Communication diagram • game creation, browsing, and join-request handling." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="30" y="55" width="1140" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="student" value="student:Student" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#f1f5f9;strokeColor=#64748b;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="55" y="210" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="game" value="game:Game" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="330" y="130" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="sport" value="sport:Sport" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="330" y="315" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="team" value="team:Team" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="620" y="130" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="join" value="joinRequest:JoinRequest" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="620" y="315" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="notification" value="notification:Notification" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#ecfdf5;strokeColor=#36966b;fontColor=#064e3b;" vertex="1" parent="1">
+          <mxGeometry x="920" y="220" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="&lt;b&gt;Conditional outcome&lt;/b&gt;&lt;br&gt;[approved] add member to team; [declined] update request status only." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fontSize=12;fillColor=#fff7ed;strokeColor=#ea580c;fontColor=#7c2d12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="425" width="470" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="1: createGame()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="student" target="game">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="2: associateSport()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="game" target="sport">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="3: browseGames()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="student" target="game">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="100"/>
+              <mxPoint x="405" y="100"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="4: requestToJoin()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="student" target="join">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="390"/>
+              <mxPoint x="700" y="390"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="5: validateJoinRequest()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="join" target="game">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="245"/>
+              <mxPoint x="405" y="245"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="6: acceptRequest() [approved]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="join" target="team">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="7: send()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="join" target="notification">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="350"/>
+              <mxPoint x="1015" y="350"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="8: notifyParticipants()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="team" target="notification">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="9: returnAvailableGames()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;dashed=1;strokeWidth=1.2;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="game" target="student">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="205"/>
+              <mxPoint x="130" y="205"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="admin-page" name="3 - Cancellation and Admin">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="540" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="3 - Cancellation and Admin — Court Booking Platform" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="30" y="18" width="1140" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Communication diagram • cancellation and administrative management interactions." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="30" y="55" width="1140" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="student" value="student:Student" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#f1f5f9;strokeColor=#64748b;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="55" y="190" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="booking" value="booking:Booking" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="330" y="190" width="170" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="court" value="court:Court" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="610" y="120" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="admin" value="admin:Admin" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#f1f5f9;strokeColor=#64748b;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="610" y="320" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="sport" value="sport:Sport" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#eaf2ff;strokeColor=#5b7db1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="900" y="120" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="notification" value="notification:Notification" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=4;strokeWidth=1.5;fillColor=#ecfdf5;strokeColor=#36966b;fontColor=#064e3b;" vertex="1" parent="1">
+          <mxGeometry x="900" y="320" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="Admin operations require authorisation. Cancellation releases the slot and triggers a cancellation notification." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fontSize=12;fillColor=#f8fafc;strokeColor=#94a3b8;fontColor=#334155;" vertex="1" parent="1">
+          <mxGeometry x="320" y="430" width="650" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="1: cancelBooking()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="student" target="booking">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="2: releaseSlot()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="booking" target="court">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="3: sendCancellationNotice()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="booking" target="notification">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="4: manageBookings()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="admin" target="booking">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="400"/>
+              <mxPoint x="415" y="400"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="5: manageCourtAvailability()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="admin" target="court">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="350"/>
+              <mxPoint x="570" y="350"/>
+              <mxPoint x="570" y="150"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="6: manageSports()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="admin" target="sport">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="7: sendAdminUpdate()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.3;fontSize=11;labelBackgroundColor=#ffffff;fontColor=#111827;" edge="1" parent="1" source="admin" target="notification">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
